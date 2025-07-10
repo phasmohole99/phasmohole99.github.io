@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gray-950 text-white;
+  }
+}
+
+@layer utilities {
+  .vertical-text {
+    white-space: nowrap;
+  }
+  
+  .skill-progress-bar {
+    width: 0;
+    transition: width 1.5s ease-in-out;
+  }
+  
+  .skill-animate {
+    width: var(--target-width);
+  }
+}
