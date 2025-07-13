@@ -19,38 +19,28 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-featured e-commerce platform built with Django and PostgreSQL, featuring user authentication, product catalog, cart functionality, and payment integration.',
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      tags: ['Django', 'PostgreSQL', 'Redis', 'Docker'],
+      title: 'Minishell with C',
+      description: 'Minishell is a C-based project that replicates a simple Unix shell, focusing on process management, command execution, tokenization, and inter-process communication using pipes.',
+      image: 'https://images.pexels.com/photos/11035396/pexels-photo-11035396.jpeg?auto=compress&fit=crop&w=600&q=80',
+      tags: ['C', 'Unix', 'Shell'],
       githubUrl: 'https://github.com',
-      liveUrl: 'https://example.com'
     },
     {
       id: 2,
-      title: 'Content Management System',
-      description: 'A custom CMS built with Django, featuring a RESTful API, role-based access control, content versioning, and media management.',
-      image: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      tags: ['Django', 'Django REST Framework', 'JWT', 'AWS S3'],
-      githubUrl: 'https://github.com'
+      title: 'inception',
+      description: 'Inception is a system administration project where you build a secure, containerized web infrastructure using Docker and Docker Compose from scratch. You’ll deploy NGINX, WordPress, and MariaDB in isolated containers with TLS, all configured manually inside a virtual machine.',
+      image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&fit=crop&w=600&q=80',
+      tags: ['Docker', 'NGINX', 'MariaDB', 'WordPress'],
+      githubUrl: 'https://github.com',
     },
     {
       id: 3,
-      title: 'Real-time Chat Application',
-      description: 'A real-time chat application with Django Channels, featuring private messaging, group chats, message history, and file sharing.',
-      image: 'https://images.pexels.com/photos/7439141/pexels-photo-7439141.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      tags: ['Django', 'Channels', 'WebSockets', 'Redis'],
+      title: 'ft_transcendence',
+      description: 'A full-stack, real-time Pong arena where code meets chaos and only clean architecture survives. Frontend: Craft a fast SPA in JavaScript with Tailwind for stylish, fluid gameplay. Backend: Orchestrate matches, chat, and auth with Django like a silent referee. Database: Keep every point, player, and play in sync using PostgreSQL—or etch it in blockchain for glory.',
+      image: 'https://images.pexels.com/photos/163743/games-ping-pong-table-tennis-play-163743.jpeg?auto=compress&fit=crop&w=600&q=80',
+      tags: ['JavaScript', 'Django', 'PostgreSQL', 'Blockchain', 'Tailwind'],
       githubUrl: 'https://github.com',
-      liveUrl: 'https://example.com'
     },
-    {
-      id: 4,
-      title: 'Task Management API',
-      description: 'A RESTful API for task management built with Django REST Framework, featuring authentication, authorization, and comprehensive documentation.',
-      image: 'https://images.pexels.com/photos/1329068/pexels-photo-1329068.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      tags: ['Django REST Framework', 'Swagger', 'Celery', 'PostgreSQL'],
-      githubUrl: 'https://github.com'
-    }
   ];
 
   useEffect(() => {
@@ -79,7 +69,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="container mx-auto px-6 h-screen flex flex-col justify-center relative">
+    <div ref={sectionRef} className="container mx-auto px-6 min-h-screen flex flex-col justify-center relative">
       <div 
         ref={elementsRef}
         className="transform transition-all duration-1000 opacity-0 translate-y-8"
@@ -88,113 +78,41 @@ const Projects = () => {
           <span className="text-8xl text-gray-700 font-bold"></span>
           <h2 className="text-5xl font-bold ml-8">Projects</h2>
         </div>
-        
-        <div className="grid md:grid-cols-12 gap-12">
-          <div className="md:col-span-4">
-            <div className="space-y-4">
-              {projects.map((project) => (
-                <div 
-                  key={project.id}
-                  className={`p-6 cursor-pointer transition-all duration-300 ${
-                    activeProject === project.id 
-                      ? 'bg-gray-800 rounded-lg' 
-                      : 'hover:bg-gray-900 rounded-lg'
-                  }`}
-                  onClick={() => setActiveProject(project.id)}
-                >
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                  <div className="flex flex-wrap gap-2 mt-3">
-                    {project.tags.slice(0, 2).map((tag, index) => (
-                      <span 
-                        key={index} 
-                        className="px-2 py-1 text-xs rounded-full bg-gray-700 text-gray-300"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                    {project.tags.length > 2 && (
-                      <span className="px-2 py-1 text-xs rounded-full bg-gray-700 text-gray-300">
-                        +{project.tags.length - 2}
-                      </span>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          <div className="md:col-span-8">
-            {activeProject && (
-              <div className="bg-gray-800 rounded-lg overflow-hidden transition-all duration-500">
-                <div className="relative h-[300px]">
-                  <img 
-                    src={projects.find(p => p.id === activeProject)?.image}
-                    alt={projects.find(p => p.id === activeProject)?.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
-                </div>
-                
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold mb-4">
-                    {projects.find(p => p.id === activeProject)?.title}
-                  </h3>
-                  
-                  <p className="text-gray-300 mb-6">
-                    {projects.find(p => p.id === activeProject)?.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-8">
-                    {projects.find(p => p.id === activeProject)?.tags.map((tag, index) => (
-                      <span 
-                        key={index} 
-                        className="px-3 py-1 text-sm rounded-full bg-gray-700 text-gray-300"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <div className="flex items-center gap-4">
-                    <a 
-                      href={projects.find(p => p.id === activeProject)?.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer" 
-                      className="flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded transition-colors"
+        <div className="space-y-8">
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className="bg-gradient-to-r from-gray-900 to-gray-800 border border-gray-700 rounded-xl shadow-lg p-8 flex flex-col md:flex-row md:items-center md:justify-between hover:shadow-2xl transition-shadow duration-300"
+            >
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold text-blue-400 mb-2">{project.title}</h3>
+                <p className="text-gray-300 text-lg mb-4 leading-relaxed">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="px-3 py-1 text-sm rounded-full bg-gray-700 text-gray-300 font-medium tracking-wide"
                     >
-                      <Github size={18} />
-                      <span>GitHub</span>
-                    </a>
-                    
-                    {projects.find(p => p.id === activeProject)?.liveUrl && (
-                      <a 
-                        href={projects.find(p => p.id === activeProject)?.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer" 
-                        className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded transition-colors"
-                      >
-                        <ExternalLink size={18} />
-                        <span>Live Demo</span>
-                      </a>
-                    )}
-                  </div>
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
-            )}
-          </div>
-        </div>
-        
-        <div className="mt-12 text-center">
-          <a 
-            href="#" 
-            className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
-          >
-            <span>View All Projects</span>
-            <ArrowRight size={18} />
-          </a>
+              <div className="flex-shrink-0 mt-6 md:mt-0 md:ml-8">
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-semibold shadow transition-colors"
+                >
+                  <Github size={20} />
+                  <span>GitHub</span>
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-      
       <div className="absolute -left-12 top-1/2 -translate-y-1/2 hidden lg:block">
         <div className="vertical-text transform -rotate-90 flex items-center bg-gray-900/50 px-1 py-1 rounded-lg">
           <div className="w-8 h-px bg-gray-700 mr-2"></div>
