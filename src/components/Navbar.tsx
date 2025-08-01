@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Twitter, Github, Linkedin } from 'lucide-react';
+import { Menu, X, Github, Linkedin } from 'lucide-react';
 
 interface NavbarProps {
   activeSection: string;
@@ -55,10 +55,7 @@ const Navbar = ({ activeSection }: NavbarProps) => {
           </ul>
           
           <div className="flex items-center space-x-4">
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-              <Twitter size={18} />
-            </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+            <a href="https://github.com/phasmohole99" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
               <Github size={18} />
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
@@ -98,10 +95,7 @@ const Navbar = ({ activeSection }: NavbarProps) => {
             </ul>
             
             <div className="flex items-center space-x-6 pt-4 border-t border-gray-800">
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://github.com/phasmohole99" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 <Github size={20} />
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
