@@ -1,4 +1,4 @@
-import { Twitter, Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -16,14 +16,6 @@ const Footer = () => {
           
           <div className="flex flex-col items-center md:items-end">
             <div className="flex space-x-6 mb-6">
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="bg-gray-800 p-3 rounded-full text-gray-400 hover:text-white hover:bg-gray-700 transition-colors"
-              >
-                <Twitter size={20} />
-              </a>
               <a 
                 href="https://github.com/phasmohole99" 
                 target="_blank" 
