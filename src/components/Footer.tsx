@@ -25,7 +25,7 @@ const Footer = () => {
                 <Twitter size={20} />
               </a>
               <a 
-                href="https://github.com" 
+                href="https://github.com/phasmohole99" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-gray-800 p-3 rounded-full text-gray-400 hover:text-white hover:bg-gray-700 transition-colors"
